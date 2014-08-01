@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import pygame
 from pygame.locals import KEYDOWN, QUIT, K_LEFT, K_RIGHT
 import sys
