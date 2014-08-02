@@ -1,16 +1,8 @@
 #!/usr/bin/env python
 import pygame
-from pygame.locals import KEYDOWN, QUIT, K_LEFT, K_RIGHT
+from pygame.locals import *
 import sys
-from breakout_sprites import Ball, Brick, Player
-
-# constants
-WINDOW_WIDTH, WINDOW_HEIGHT = 640, 480
-BALL_WIDTH, BALL_HEIGHT = 16, 16
-BRICK_WIDTH, BRICK_HEIGHT = 64, 16
-PLAYER_WIDTH, PLAYER_HEIGHT = 64, 16
-PLAYER_SPEED = 10
-BALL_SPEED = 2
+from breakout_sprites import *
 
 # game init
 pygame.init()
@@ -54,10 +46,10 @@ while True:
             sys.exit()
         elif event.type == KEYDOWN:
             if event.key == K_LEFT:
-                if player.rect.x > 0:
+                if player.rect.left > 0:
                     player.rect = player.rect.move(-PLAYER_SPEED, 0)
             elif event.key == K_RIGHT:
-                if player.rect.x < WINDOW_WIDTH:
+                if player.rect.right < WINDOW_WIDTH:
                     player.rect = player.rect.move(PLAYER_SPEED, 0)
 
     # collision detection (ball bounce against brick & player)

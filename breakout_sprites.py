@@ -6,6 +6,8 @@ WINDOW_WIDTH, WINDOW_HEIGHT = 640, 480
 BALL_WIDTH, BALL_HEIGHT = 16, 16
 BRICK_WIDTH, BRICK_HEIGHT = 64, 16
 PLAYER_WIDTH, PLAYER_HEIGHT = 64, 16
+PLAYER_SPEED = 10
+BALL_SPEED = 2
 
 class Breakout_Sprite(pygame.sprite.Sprite):
     """ Breakout Sprite class that extends following classes
