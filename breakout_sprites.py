@@ -9,6 +9,7 @@ PLAYER_WIDTH, PLAYER_HEIGHT = 64, 16
 PLAYER_SPEED = 10
 BALL_SPEED = 2
 
+
 class Breakout_Sprite(pygame.sprite.Sprite):
     """ Breakout Sprite class that extends following classes
 
@@ -23,6 +24,7 @@ class Breakout_Sprite(pygame.sprite.Sprite):
         self.image.set_colorkey((255, 255, 255))
         self.rect = self.image.get_rect()
 
+
 class Player(Breakout_Sprite):
     """ Bar: Positionned at the bottom of the window,
              but can move horizontally.
@@ -32,13 +34,14 @@ class Player(Breakout_Sprite):
         self.rect.bottom = WINDOW_HEIGHT
         self.rect.left = (WINDOW_WIDTH - self.image.get_width()) / 2
 
-	def move_left(self):
-		if self.rect.left > 0:
-			self.rect.move_ip(-PLAYER_SPEED, 0)
+    def move_left(self):
+        if self.rect.left > 0:
+            self.rect.move_ip(-PLAYER_SPEED, 0)
 
-	def move_right(self):
-		if self.rect.right < WINDOW_WIDTH:
-			self.rect.move_ip(PLAYER_SPEED, 0)
+    def move_right(self):
+        if self.rect.right < WINDOW_WIDTH:
+            self.rect.move_ip(PLAYER_SPEED, 0)
+
 
 class Brick(Breakout_Sprite):
     """ Brick: Statically positionned in (x, y).
@@ -46,6 +49,7 @@ class Brick(Breakout_Sprite):
     def __init__(self, image_file, x, y):
         Breakout_Sprite.__init__(self, image_file)
         self.rect.x, self.rect.y = x, y
+
 
 class Ball(Breakout_Sprite):
     """ Ball: Moves according to speed (speed_x, speed_y).
