@@ -32,6 +32,14 @@ class Player(Breakout_Sprite):
         self.rect.bottom = WINDOW_HEIGHT
         self.rect.left = (WINDOW_WIDTH - self.image.get_width()) / 2
 
+	def move_left(self):
+		if self.rect.left > 0:
+			self.rect.move_ip(-PLAYER_SPEED, 0)
+
+	def move_right(self):
+		if self.rect.right < WINDOW_WIDTH:
+			self.rect.move_ip(PLAYER_SPEED, 0)
+
 class Brick(Breakout_Sprite):
     """ Brick: Statically positionned in (x, y).
     """

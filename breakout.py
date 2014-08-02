@@ -46,11 +46,9 @@ while True:
             sys.exit()
         elif event.type == KEYDOWN:
             if event.key == K_LEFT:
-                if player.rect.left > 0:
-                    player.rect = player.rect.move(-PLAYER_SPEED, 0)
+				player.move_left()
             elif event.key == K_RIGHT:
-                if player.rect.right < WINDOW_WIDTH:
-                    player.rect = player.rect.move(PLAYER_SPEED, 0)
+				player.move_right()
 
     # collision detection (ball bounce against brick & player)
     hits = pygame.sprite.spritecollide(ball, player_bricks_group, False)
@@ -72,6 +70,6 @@ while True:
     all_sprites_group.draw(window)
             
     # refresh screen
-    ball.update()
+    all_sprites_group.update()
     clock.tick(60)
     pygame.display.flip()
